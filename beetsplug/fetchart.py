@@ -132,7 +132,7 @@ class GoogleImages(ArtSource):
             dataInfo = data['results']
             for myUrl in dataInfo:
                 yield myUrl['unescapedUrl']
-        except:
+        except Exception:
             self._log.debug(u'error scraping art page')
             return
 
@@ -207,7 +207,7 @@ class Wikipedia(ArtSource):
                 cover_filename = results[0]['coverFilename']['value']
             else:
                 self._log.debug(u'album not found on dbpedia')
-        except:
+        except Exception:
             self._log.debug(u'error scraping dbpedia album page')
 
         # Ensure we have a filename before attempting to query wikipedia
@@ -229,7 +229,7 @@ class Wikipedia(ArtSource):
             for _, result in results.iteritems():
                 image_url = result['imageinfo'][0]['url']
                 yield image_url
-        except:
+        except Exception:
             self._log.debug(u'error scraping wikipedia imageinfo')
             return
 

@@ -41,7 +41,7 @@ def _process_item(item, lib, copy=False, move=False, delete=False,
     if tag:
         try:
             k, v = tag.split('=')
-        except:
+        except Exception:
             raise UserError('%s: can\'t parse k=v tag: %s' % (PLUGIN, tag))
         setattr(k, v)
         item.store()
