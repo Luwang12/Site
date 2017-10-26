@@ -36,7 +36,7 @@ from beets.util import syspath, bytestring_path, py3_path
 import six
 
 try:
-    import itunes
+    from beetsplug.fetchart import itunes
     HAVE_ITUNES = True
 except ImportError:
     HAVE_ITUNES = False
